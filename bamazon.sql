@@ -13,9 +13,9 @@ CREATE TABLE products(
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('Television', 'Electronics', 120, 5);
-VALUES ('Macbook Air', 'Electronics', 200, 5);
-VALUES ('Amazon Echo', 'Electronics', 80, 5);
+VALUES ('Television', 'Electronics', 120, 5),
+VALUES ('Macbook Air', 'Electronics', 200, 5),
+VALUES ('Amazon Echo', 'Electronics', 80, 5),
 VALUES ('Dashcam', 'Electronics', 25, 5);
 
 
