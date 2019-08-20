@@ -1,5 +1,4 @@
 # Bamazon
-# Node.js & MySQL
 
 ## Overview
 
