@@ -16,9 +16,6 @@ const itemPrompt =[
     }
 ];
 
-// Variables
-
-
 // Functions
 function bamazon() {
     // Display items to user
