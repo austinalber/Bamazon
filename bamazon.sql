@@ -17,6 +17,14 @@ VALUES ('Television', 'Electronics', 120, 5),
 VALUES ('Macbook Air', 'Electronics', 200, 5),
 VALUES ('Amazon Echo', 'Electronics', 80, 5),
 VALUES ('Dashcam', 'Electronics', 25, 5);
+VALUES ('War of the Worlds', 'Books', 120, 5),
+VALUES ('Scat', 'Books', 200, 5),
+VALUES ('The Things They Carried', 'Books', 80, 5),
+VALUES ('Another Brick in the Wall', 'Music', 25, 5);
+VALUES ('Blue Slide Park', 'Music', 120, 5),
+
+-- View Database Entries
+SELECT * FROM products;
 
 
 
