@@ -1,16 +1,17 @@
 // Required NPMs
 const inquirer = require('inquirer');
 const mysql = require('mysql');
+const table = require("console.table");
 
 // Prompts for inquirer (id & units)
 const itemPrompt =[
     {
-        type: input,
+        type: "input",
         message: "What is the ID of the item you would like to purchase?",
         name: "id"
     },
     {
-        type: input,
+        type: "input",
         message: "How many units of the product would you like to purchase?",
         name: "units"
     }
@@ -32,18 +33,18 @@ function bamazon() {
                 console.log('There is no stock left at this moment, please check again later');
             } 
             else {
-                let newPrice = parseInt(res[0].price);
-                let purchaseUnits = parseInt(res.units);
-                let productName = res[0].product_name; 
-                let total = newPrice * purchaseUnits;
-                let actualStock = res[0].stock_quantity - res.units;
+                var newPrice = parseInt(res[0].price);
+                var purchaseUnits = parseInt(res.units);
+                var productName = res[0].product_name; 
+                var total = newPrice * purchaseUnits;
+                var actualStock = res[0].stock_quantity - res.units;
                 console.log(`The total cost for your items will be $${total} for ${purchaseUnits} ${productName}`);
                 connection.query(`UPDATE products SET stock_quantity = ${actualStock} WHERE id = ${res.id}`, function (err) {
             
                 if (err) throw (err);
                 })
             }
-            
+
             connection.end();
         })
   
@@ -55,7 +56,7 @@ function displayTable() {
         if (err) throw err;
         console.log('');
         console.table(res);
-        userPrompt();
+        bamazon();
       });
 }
 
@@ -63,8 +64,8 @@ function displayTable() {
 var connection = mysql.createConnection({
     host: "localhost",
   
-    // Your port; if not 3306
-    port: 3306,
+    // Your port; if not 3000
+    port: 3000,
   
     // Your username
     user: "root",
@@ -79,7 +80,4 @@ connection.connect(function(err) {
 
     // Display Table
     displayTable();
-
-    // Run Bamazon function
-    bamazon();
 });
